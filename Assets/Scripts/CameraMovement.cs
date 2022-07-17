@@ -6,6 +6,7 @@ using DG.Tweening;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _target;
+
     private readonly float _duration = 1f;
     private Camera _camera;
 

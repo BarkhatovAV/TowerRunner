@@ -8,7 +8,7 @@ public class PlayerAnimation : CharacterAnimatoin
 
     public void StopCrawlAnimatoin(float duration)
     {
-        StopCrawlAnimation();
+        SetPlaybackCrawlAnimation(false);
         StartCoroutine(StartingCrowlAnimatoin(duration));
         ParticlesAnimation.StartHitrintParticlesAnimation();
     }
@@ -16,6 +16,6 @@ public class PlayerAnimation : CharacterAnimatoin
     public void PlaySittingAnimation()
     {
         Animator.SetTrigger(_sittingAnimationName);
-        ParticlesAnimation.StopFootprintParticlesAnimation();
+        ParticlesAnimation.SetPlaybackFootprintParticles(false);
     }
 }

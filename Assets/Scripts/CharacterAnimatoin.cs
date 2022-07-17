@@ -21,22 +21,16 @@ public class CharacterAnimatoin : MonoBehaviour
         StartCoroutine(StartingCrowlAnimatoin(_delay));
     }
 
-    protected void PlayCrawlAnimation()
+    protected void SetPlaybackCrawlAnimation(bool isPlaying)
     {
-        Animator.SetBool(_crawlAnimation, true);
-        ParticlesAnimation.StartFootprintParticlesAnimation();
-    }
-
-    protected void StopCrawlAnimation()
-    {
-        Animator.SetBool(_crawlAnimation, false);
-        ParticlesAnimation.StopFootprintParticlesAnimation();
+        Animator.SetBool(_crawlAnimation, isPlaying);
+        ParticlesAnimation.SetPlaybackFootprintParticles(isPlaying);
     }
 
     protected IEnumerator StartingCrowlAnimatoin(float delay)
     {
         yield return new WaitForSeconds(delay);
-        PlayCrawlAnimation();
-        ParticlesAnimation.StartFootprintParticlesAnimation();
+        SetPlaybackCrawlAnimation(true);
+        ParticlesAnimation.SetPlaybackFootprintParticles(true);
     }
 }

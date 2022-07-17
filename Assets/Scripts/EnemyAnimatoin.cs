@@ -13,11 +13,11 @@ public class EnemyAnimatoin : CharacterAnimatoin
     public void PlaySittingAnimation()
     {
         Animator.SetTrigger(_sittingAnimationName);
-        ParticlesAnimation.StopFootprintParticlesAnimation();
+        ParticlesAnimation.SetPlaybackFootprintParticles(false);
     }
 
     public void StopAnimation()
     {
-        StopCrawlAnimation();
+        SetPlaybackCrawlAnimation(false);
     }
 }

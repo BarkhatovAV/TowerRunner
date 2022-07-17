@@ -18,6 +18,7 @@ public class PlayerMover : MonoBehaviour
     private Vector3 _moveDirection = new Vector3(1, 1, 1);
     private float _horizontalMove;
     private bool _isRunning = true;
+
     public event Action RiseFinished;
     public event Action FellDownStairs;
 
